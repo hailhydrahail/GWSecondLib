@@ -1,0 +1,6 @@
+framework module Pods_GWSecondLib_Example {
+  umbrella header "Pods-GWSecondLib_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
