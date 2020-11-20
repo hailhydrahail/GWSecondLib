@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GWTipBackView: UIView {
+open class GWTipBackView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -22,7 +22,7 @@ class GWTipBackView: UIView {
 
     @IBOutlet weak var tipTitleLabel: UILabel!
     
-    override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
         
         setupContentView()

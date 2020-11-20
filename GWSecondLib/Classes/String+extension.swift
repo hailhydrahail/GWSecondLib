@@ -14,7 +14,7 @@ import UIKit
 
 extension Array{
     //数组转json
-    func dataTypeTurnJson() -> String {
+    public func dataTypeTurnJson() -> String {
         let jsonData = try! JSONSerialization.data(withJSONObject: self, options: JSONSerialization.WritingOptions.prettyPrinted)
         let str = String(data: jsonData, encoding: String.Encoding.utf8)!
         //路径
@@ -39,7 +39,7 @@ extension String {
     }
     
     //计算文字所占大小
-    func rectWithFontSize(_ fontSize:CGFloat, width:CGFloat) -> CGRect {
+    public func rectWithFontSize(_ fontSize:CGFloat, width:CGFloat) -> CGRect {
         let size = CGSize(width: width,height: CGFloat.greatestFiniteMagnitude)
         
         let paragraphStyle = NSMutableParagraphStyle()
@@ -58,7 +58,7 @@ extension String {
         return rect
     }
     
-    func textSizeWithFont(_ font: UIFont, constrainedToSize size:CGSize) -> CGSize {
+    public func textSizeWithFont(_ font: UIFont, constrainedToSize size:CGSize) -> CGSize {
         var textSize:CGSize!
         if size.equalTo(CGSize.zero) {
             textSize = self.size(withAttributes: [NSAttributedString.Key.font:font] )
@@ -72,7 +72,7 @@ extension String {
     }
     
     //MARK: - 字符串转data
-    func stringToByte()->Data? {
+    public func stringToByte()->Data? {
         
         let whitespace = CharacterSet.whitespacesAndNewlines
         var temp = self.trimmingCharacters(in: whitespace)
@@ -127,7 +127,7 @@ extension String {
     ///
     /// - Parameter isQuanpin: 是否全拼
     /// - Returns: 转换后 的拼音
-     func transformToPingyin(isQuanpin:Bool) -> String {
+    public func transformToPingyin(isQuanpin:Bool) -> String {
         let muStr:NSMutableString = NSMutableString(string: self)
         
         CFStringTransform(muStr, nil, kCFStringTransformToLatin, false)
@@ -167,19 +167,19 @@ extension String {
 
 extension String{
     
-    func contain(subStr: String) -> Bool {return (self as NSString).range(of: subStr).length > 0}
+    public func contain(subStr: String) -> Bool {return (self as NSString).range(of: subStr).length > 0}
     
-    func explode (_ separator: Character) -> [String] {
+    public func explode (_ separator: Character) -> [String] {
         return self.split(whereSeparator: { (element: Character) -> Bool in
             return element == separator
         }).map { String($0) }
     }
     
-    func replacingOccurrencesOfString(_ target: String, withString: String) -> String{
+    public func replacingOccurrencesOfString(_ target: String, withString: String) -> String{
         return (self as NSString).replacingOccurrences(of: target, with: withString)
     }
     
-    func deleteSpecialStr()->String{
+    public func deleteSpecialStr()->String{
     
         return self.replacingOccurrencesOfString("Optional<", withString: "").replacingOccurrencesOfString(">", withString: "")
     }
@@ -187,7 +187,7 @@ extension String{
     var floatValue: Float? {return NumberFormatter().number(from: self)?.floatValue}
     var doubleValue: Double? {return NumberFormatter().number(from: self)?.doubleValue}
     
-    func repeatTimes(_ times: Int) -> String{
+    public func repeatTimes(_ times: Int) -> String{
         
         var strM = ""
         
@@ -202,28 +202,28 @@ extension String{
 ///字符串截取
 extension String {
     /// 截取到任意位置
-    func subString(to: Int) -> String {
+    public func subString(to: Int) -> String {
         let index: String.Index = self.index(startIndex, offsetBy: to)
         return String(self[..<index])
     }
     /// 从任意位置开始截取
-    func subString(from: Int) -> String {
+    public func subString(from: Int) -> String {
         let index: String.Index = self.index(startIndex, offsetBy: from)
         return String(self[index ..< endIndex])
     }
     /// 从任意位置开始截取到任意位置
-    func subString(from: Int, to: Int) -> String {
+    public func subString(from: Int, to: Int) -> String {
         let beginIndex = self.index(self.startIndex, offsetBy: from)
         let endIndex = self.index(self.startIndex, offsetBy: to)
         return String(self[beginIndex...endIndex])
     }
     //使用下标截取到任意位置
-    subscript(to: Int) -> String {
+    public subscript(to: Int) -> String {
         let index = self.index(self.startIndex, offsetBy: to)
         return String(self[..<index])
     }
     //使用下标从任意位置开始截取到任意位置
-    subscript(from: Int, to: Int) -> String {
+    public subscript(from: Int, to: Int) -> String {
         let beginIndex = self.index(self.startIndex, offsetBy: from)
         let endIndex = self.index(self.startIndex, offsetBy: to)
         return String(self[beginIndex...endIndex])

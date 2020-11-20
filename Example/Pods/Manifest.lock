@@ -4,7 +4,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - GWSecondLib (0.1.0)
+  - GWSecondLib (1.0.0)
   - Nimble (7.3.4)
   - Nimble-Snapshots (6.3.0):
     - Nimble-Snapshots/Core (= 6.3.0)
@@ -33,11 +33,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  GWSecondLib: ff1229da7487b58bb0bdc859a57d55b6f815459c
+  GWSecondLib: d47f2f51fbb81916dd4a694e99674c66a06176e6
   Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
   Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
 
 PODFILE CHECKSUM: 49d99b6d98c6b4b6e53f460e1740b33a1c888da3
 
-COCOAPODS: 1.9.0.beta.2
+COCOAPODS: 1.10.0
